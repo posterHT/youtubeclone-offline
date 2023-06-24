@@ -32,21 +32,3 @@ showMoreBtn.addEventListener('click', function () {
     }
 });
 
-var listContainer = document.getElementById("vidlist");
-var exampleVid = document.getElementById("videxample").innerHTML;
-function newVideo(video_title, video_views, channel_title, thumbnail_src, video_id,video_likes) {
-    var para = document.createElement("div");
-    var x = exampleVid.replace("#VIDEO_TITLE", video_title)
-        .replace("#CHANNEL_TITLE", channel_title)
-        .replace("#VIDEO_VIEWS", video_views)
-        .replace("#THUMBNAIL_SRC", thumbnail_src)
-        .replace("#VIDEO_LIKES",video_likes)
-        .replace("VIDEOID",video_id);
-    para.innerHTML = x;
-   // para.setAttribute("onclick", "goToVideo('" + video_id + "')");
-
-    listContainer.appendChild(para);
-}
-function goToVideo(id){
-    window.location.href = "play-video.html?id="+id;
-}
